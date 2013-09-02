@@ -180,7 +180,7 @@ def write_plugin(plugin, plugin_ini_list):
     if plugin['writing_status'] == 'done':
       return
     else:
-      print "Dependency loop detected with %s" % plugin['name']
+      print "Dependency loop detected with %s" % (plugin['name'])
       exit(1)
 
   plugin['writing_status'] = 'dependencies'
@@ -705,7 +705,7 @@ if not os.path.exists("config/pandora-plugin.am") or 'write' in actions:
   plugin_name_list = [plugin['libname'] for plugin in plugin_ini_list]
   for plugin in plugin_ini_list:
     if plugin_name_list.count(plugin['libname']) != 1:
-      print "Duplicate module name %s" % plugin['libname']
+      print "Duplicate module name %s" % (plugin['libname'])
       exit(1)
 
   for plugin in plugin_ini_list:
