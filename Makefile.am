@@ -63,7 +63,8 @@ EXTRA_DIST = \
   percona_playback/test/tcpdump_multiple_connections.dump \
   percona_playback/test/tcpdump_stress_test.dump \
   percona_playback/test/tcpdump_accuracy.dump \
-  test_run.sh
+  test_run.sh \
+  po/Makefile.in.in
 
 include config/pandora-plugin.am
 
