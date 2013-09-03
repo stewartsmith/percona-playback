@@ -18,6 +18,18 @@ AC_CONFIG_MACRO_DIR([m4])
 
 PANDORA_CANONICAL_TARGET(warnings-always-on, require-cxx)
 
+AM_INIT_AUTOMAKE
+
+AC_PROG_LIBTOOL
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION([0.14])
+
+# Pandora already calls AC_PROG_INTLTOOL
+if test "x$pandora_have_intltool" = "xno"
+then
+    AC_MSG_ERROR([intltool is not installed])
+fi
+
 # Increment if interfaces have been added, removed, or changed.
 LIBPERCONA_PLAYBACK_VERSION_CURRENT=2
 
