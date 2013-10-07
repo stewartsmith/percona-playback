@@ -1,3 +1,9 @@
+percona-playback (0.7) unstable; urgency=low
+
+  * Update version to 0.7
+
+ -- Ignacio Nin <ignacio.nin@percona.com>  Mon,  2 Sep 2013 11:30:00 -0300
+
 percona-playback (0.6) unstable; urgency=low
 
   * Add a dependency to libcloog-ppl0, which is needed by boost for compiling

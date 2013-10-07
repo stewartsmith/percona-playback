@@ -63,7 +63,8 @@ EXTRA_DIST = \
   percona_playback/test/tcpdump_multiple_connections.dump \
   percona_playback/test/tcpdump_stress_test.dump \
   percona_playback/test/tcpdump_accuracy.dump \
-  test_run.sh
+  test_run.sh \
+  po/Makefile.in.in
 
 include config/pandora-plugin.am
 
@@ -96,8 +97,8 @@ libpercona_playback_la_CXXFLAGS = \
 	$(AM_CXXFLAGS) \
 	-DBUILDING_PERCONA_PLAYBACK
 
-libpercona_playback_la_LIBADD = $(LIBDL_LIBS) $(BOOST_LIBS) $(TBB_LIBS)
-libpercona_playback_la_LDFLAGS = $(AM_LDFLAGS) -version-info $(LIBPERCONA_PLAYBACK_VERSION) $(BOOST_LIBS) $(TBB_LIBS) $(pandora_plugin_libs)
+libpercona_playback_la_LIBADD = $(LIBDL_LIBS) $(BOOST_THREAD_LIBS) $(BOOST_PROGRAM_OPTIONS_LIBS) $(TBB_LIBS)
+libpercona_playback_la_LDFLAGS = $(AM_LDFLAGS) -version-info $(LIBPERCONA_PLAYBACK_VERSION) $(BOOST_THREAD_LIBS) $(BOOST_PROGRAM_OPTIONS_LIBS) $(TBB_LIBS) $(pandora_plugin_libs)
 libpercona_playback_la_DEPENDENCIES = ${noinst_LTLIBRARIES} $(pandora_plugin_libs)
 
 check_PROGRAMS += \
@@ -183,7 +184,7 @@ percona_playback_test_tcpdump_accuracy_LDADD= $(LDADD) $(MYSQL_LIBS)
 
 bin_PROGRAMS += bin/percona-playback
 bin_percona_playback_SOURCES = bin/percona_playback.cc
-bin_percona_playback_LDADD= $(BOOST_LIBS) $(LDADD) $(LTLIBTBB) $(MYSQL_LIBS) $(pandora_plugin_libs) $(PANDORA_DYNAMIC_LDADDS)
+bin_percona_playback_LDADD= $(BOOST_THREAD_LIBS) $(BOOST_PROGRAM_OPTIONS_LIBS) $(LDADD) $(LTLIBTBB) $(MYSQL_LIBS) $(pandora_plugin_libs) $(PANDORA_DYNAMIC_LDADDS)
 
 include doxygen/include.am
 include docs/include.am

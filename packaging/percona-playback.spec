@@ -22,7 +22,7 @@
 %endif
 
 Name:           percona-playback
-Version:        0.6
+Version:        0.7
 Release:        2%{?dist}
 Summary:        A tool for replaying captured database server load
 
@@ -56,7 +56,6 @@ developing applications that use %{name}.
 
 
 %build
-autoreconf -i
 %configure --disable-static
 make %{?_smp_mflags}
 
