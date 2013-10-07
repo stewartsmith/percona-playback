@@ -56,7 +56,6 @@ developing applications that use %{name}.
 
 
 %build
-autoreconf -i
 %configure --disable-static
 make %{?_smp_mflags}
 
