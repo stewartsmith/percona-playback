@@ -30,7 +30,9 @@ User's Manual
    :maxdepth: 4
    :glob:
 
+   overview
    manual
+   known_issues
 
 Miscellaneous
 =============
